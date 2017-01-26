@@ -14,6 +14,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <SchemaVersion>2.0</SchemaVersion>
+    <ApplicationInsightsResourceId>/subscriptions/2a9f0003-707b-4ddb-9756-96bf4b26b8dd/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/PowerGrid</ApplicationInsightsResourceId>
   </PropertyGroup>
   <ItemGroup>
     <DnxInvisibleContent Include="bower.json" />
