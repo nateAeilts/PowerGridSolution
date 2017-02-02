@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
+using PowerGrid.Helpers;
 
 namespace PowerGrid
 {
@@ -11,6 +12,7 @@ namespace PowerGrid
     {
         public static void Main(string[] args)
         {
+            var plants = InfoHelper.GetPlants();
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())

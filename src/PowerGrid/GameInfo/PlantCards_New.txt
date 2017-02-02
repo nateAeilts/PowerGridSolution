@@ -1,0 +1,276 @@
+﻿{
+	BidStart:1,
+	FuelType:Coal,
+	FuelCost:3,
+	Power:1
+}|
+{
+	BidStart:2,
+	FuelType:Oil,
+	FuelCost:2,
+	Power:1
+}|
+{
+	BidStart:3,
+	FuelType:Coal,
+	FuelCost:1,
+	Power:1
+}|
+{
+	BidStart:4,
+	FuelType:CoalOil,
+	FuelCost:1,
+	Power:1
+}|
+{
+	BidStart:5,
+	FuelType:CoalOil,
+	FuelCost:3,
+	Power:2
+}|
+{
+	BidStart:6,
+	FuelType:Garbage,
+	FuelCost:1,
+	Power:2
+}|
+{
+	BidStart:7,
+	FuelType:Oil,
+	FuelCost:2,
+	Power:2
+}|
+{
+	BidStart:8,
+	FuelType:Uranium,
+	FuelCost:1,
+	Power:2
+}|
+{
+	BidStart:9,
+	FuelType:Coal,
+	FuelCost:3,
+	Power:3
+}|
+{
+	BidStart:10,
+	FuelType:Green,
+	FuelCost:0,
+	Power:1
+}|
+{
+	BidStart:11,
+	FuelType:Green,
+	FuelCost:0,
+	Power:1
+}|
+{
+	BidStart:12,
+	FuelType:Oil,
+	FuelCost:1,
+	Power:2
+}|
+{
+	BidStart:13,
+	FuelType:CoalOil,
+	FuelCost:1,
+	Power:2
+}|
+{
+	BidStart:14,
+	FuelType:Coal,
+	FuelCost:3,
+	Power:4
+}|
+{
+	BidStart:15,
+	FuelType:Green,
+	FuelCost:0,
+	Power:2
+}|
+{
+	BidStart:16,
+	FuelType:Green,
+	FuelCost:0,
+	Power:2
+}|
+{
+	BidStart:19,
+	FuelType:Uranium,
+	FuelCost:1,
+	Power:3
+}|
+{
+	BidStart:20,
+	FuelType:Oil,
+	FuelCost:1,
+	Power:3
+}|
+{
+	BidStart:21,
+	FuelType:Garbage,
+	FuelCost:3,
+	Power:5
+}|
+{
+	BidStart:22,
+	FuelType:Oil,
+	FuelCost:2,
+	Power:4
+}|
+{
+	BidStart:23,
+	FuelType:Coal,
+	FuelCost:2,
+	Power:4
+}|
+{
+	BidStart:24,
+	FuelType:Uranium,
+	FuelCost:1,
+	Power:4
+}|
+{
+	BidStart:25,
+	FuelType:Oil,
+	FuelCost:3,
+	Power:5
+}|
+{
+	BidStart:26,
+	FuelType:Green,
+	FuelCost:0,
+	Power:3
+}|
+{
+	BidStart:27,
+	FuelType:Garbage,
+	FuelCost:1,
+	Power:4
+}|
+{
+	BidStart:28,
+	FuelType:Coal,
+	FuelCost:3,
+	Power:5
+}|
+{
+	BidStart:29,
+	FuelType:CoalOil,
+	FuelCost:3,
+	Power:5
+}|
+{
+	BidStart:30,
+	FuelType:Coal,
+	FuelCost:1,
+	Power:4
+}|
+{
+	BidStart:31,
+	FuelType:Uranium,
+	FuelCost:1,
+	Power:5
+}|
+{
+	BidStart:32,
+	FuelType:Green,
+	FuelCost:0,
+	Power:4
+}|
+{
+	BidStart:33,
+	FuelType:Garbage,
+	FuelCost:2,
+	Power:5
+}|
+{
+	BidStart:34,
+	FuelType:Coal,
+	FuelCost:3,
+	Power:6
+}|
+{
+	BidStart:35,
+	FuelType:Coal,
+	FuelCost:1,
+	Power:5
+}|
+{
+	BidStart:36,
+	FuelType:CoalOil,
+	FuelCost:2,
+	Power:6
+}|
+{
+	BidStart:37,
+	FuelType:Oil,
+	FuelCost:3,
+	Power:7
+}|
+{
+	BidStart:38,
+	FuelType:Uranium,
+	FuelCost:1,
+	Power:6
+}|
+{
+	BidStart:39,
+	FuelType:Green,
+	FuelCost:0,
+	Power:5
+}|
+{
+	BidStart:40,
+	FuelType:Oil,
+	FuelCost:1,
+	Power:6
+}|
+{
+	BidStart:42,
+	FuelType:Garbage,
+	FuelCost:2,
+	Power:7
+}|
+{
+	BidStart:44,
+	FuelType:Green,
+	FuelCost:0,
+	Power:6
+}|
+{
+	BidStart:46,
+	FuelType:Coal,
+	FuelCost:2,
+	Power:7
+}|
+{
+	BidStart:50,
+	FuelType:Uranium,
+	FuelCost:2,
+	Power:8
+}|
+{
+	BidStart:52,
+	FuelType:Garbage,
+	FuelCost:3,
+	Power:8
+}|
+{
+	BidStart:54,
+	FuelType:Oil,
+	FuelCost:2,
+	Power:8
+}|
+{
+	BidStart:57,
+	FuelType:Oil,
+	FuelCost:3,
+	Power:9
+}|
+{
+	BidStart:60,
+	FuelType:Green,
+	FuelCost:0,
+	Power:8
+}|

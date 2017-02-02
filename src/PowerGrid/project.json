@@ -1,4 +1,4 @@
-﻿{
+{
   "userSecretsId": "aspnet-PowerGrid-351e6a5d-6995-47aa-9b19-6c44230bf9fc",
 
   "dependencies": {
@@ -35,10 +35,11 @@
       "version": "1.0.0-preview1-final",
       "type": "build"
     },
-    "Microsoft.VisualStudio.Web.CodeGenerators.Mvc":  {
+    "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": {
       "version": "1.0.0-preview1-final",
       "type": "build"
-    }
+    },
+    "Microsoft.EntityFrameworkCore": "1.1.0"
   },
 
   "tools": {
