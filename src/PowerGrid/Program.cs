@@ -12,7 +12,7 @@ namespace PowerGrid
     {
         public static void Main(string[] args)
         {
-            var plants = InfoHelper.GetPlants();
+            InfoHelper infoHelper = new InfoHelper();
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())

@@ -6,100 +6,68 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using static PowerGrid.GameInfo.GameInfo;
 
 namespace PowerGrid.Helpers
 {
-    public static class InfoHelper
+    public class InfoHelper
     {
-        public static Dictionary<int, Plant> GetPlants()
+        public int NumberOfPlayers;
+        public int NumberOfRegions;
+        public int NumberOfRemovedPlants;
+        public int NumberOfPlayerPlants;
+        public int NumberOfCitiesForStep2;
+        public int NumberOfCitiesToEnd;
+        public string GameEdition;
+        public string BoardMap;
+        public string CardSet;
+        public Dictionary<int, Dictionary<string, int>> ReplenishmentSchedule;
+        public Dictionary<int, Models.Plant> PlantCards;
+
+        public InfoHelper(int numberOfPlayers)
         {
-            Dictionary<int, Plant> returnPlants = new Dictionary<int, Plant>();
-            string plantFilePath = "C:\\Users\\nate.aeilts\\Documents\\Visual Studio 2015\\Projects\\PowerGridSolution\\src\\PowerGrid\\Info\\PlantCards_Original.txt";
-            //string plantFilePath = "C:\\Users\\nate.aeilts\\Documents\\Visual Studio 2015\\Projects\\PowerGridSolution\\src\\PowerGrid\\Info\\PlantCards_New.txt";
-            string contents = File.ReadAllText(plantFilePath);
-            contents = Regex.Replace(contents, @"\t|\n|\r|\ ", "");
-            var plants = contents.Split('|');
+            NumberOfPlayers = numberOfPlayers;
+            NumberOfRegions = GetNumberOfActiveRegions(NumberOfPlayers);
+            NumberOfRemovedPlants = GetNumberOfRemovedPlants(NumberOfPlayers);
+            NumberOfPlayerPlants = GetNumberOfPlayerPlants(NumberOfPlayers);
+            NumberOfCitiesForStep2 = GetNumberOfCitiesForStep2(NumberOfPlayers);
+            NumberOfCitiesToEnd = GetNumberOfCitiesToEnd(NumberOfPlayers);
 
-            Dictionary<string, string> plantProperties = new Dictionary<string, string>();
-            for(int i = 0; i < plants.Length -1; i++)
-            {
-                string plant = TrimOuterStrings(plants[i], "{", "}");
-                //Console.WriteLine(plant);
+            GameEdition = Constants.Editions.GameEditions.Default;
+            BoardMap = Constants.Editions.BoardMap.Default;
+            CardSet = Constants.Editions.PlantCards.Default;
 
-                var props = plant.Split(',');
-                StringBuilder pn = new StringBuilder();
-                foreach (var prop in props)
-                {
-                    var pair = prop.Split(':');
-                    plantProperties[pair[0]] = pair[1];
-                    pn.Append(pair[1] + "-");
-                }
-                string plantName = pn.ToString().Trim('-');
+            ReplenishmentSchedule = GetReplenishmentSchedule(NumberOfPlayers);
+            PlantCards = GetPlants(CardSet);
+            //Cities = InfoHelper.GetCities();
+        }
 
-                Plant newPlant = new Plant();
+        public InfoHelper()
+        {
+            NumberOfPlayers = 4;
+            NumberOfRegions = GetNumberOfActiveRegions(NumberOfPlayers);
+            NumberOfRemovedPlants = GetNumberOfRemovedPlants(NumberOfPlayers);
+            NumberOfPlayerPlants = GetNumberOfPlayerPlants(NumberOfPlayers);
+            NumberOfCitiesForStep2 = GetNumberOfCitiesForStep2(NumberOfPlayers);
+            NumberOfCitiesToEnd = GetNumberOfCitiesToEnd(NumberOfPlayers);
 
-                int bidStart;
-                newPlant.BidStart = GetPlantIntProperty(plantProperties, Constants.Plant.PropertyNames.BidStart, out bidStart);
+            GameEdition = Constants.Editions.GameEditions.Default;
+            BoardMap = Constants.Editions.BoardMap.Default;
+            CardSet = Constants.Editions.PlantCards.Default;
 
-                int fuelCost;
-                newPlant.FuelCost = GetPlantIntProperty(plantProperties, Constants.Plant.PropertyNames.FuelCost, out fuelCost);
+            ReplenishmentSchedule = GetReplenishmentSchedule(NumberOfPlayers);
+            PlantCards = GetPlants(CardSet);
+        }
+
+        public Dictionary<string, Models.City> GetCities()
+        {
+            throw new NotImplementedException();
+            //Dictionary<string, Models.City> cities = new Dictionary<string, City>();
+            //foreach(string city in Constants.City.Names.ToList())
+            //{
+            //    Models.City newCity = new City();
                 
-                int power;
-                newPlant.Power = GetPlantIntProperty(plantProperties, Constants.Plant.PropertyNames.Power, out power);
-
-                //Should I use the bid price as the ID? I just don't know.
-                newPlant.ID = newPlant.BidStart;
-                newPlant.Name = plantName;
-                newPlant.FuelType = plantProperties[Constants.Plant.PropertyNames.FuelType];
-
-                plantProperties.Clear();
-                returnPlants.Add(newPlant.ID, newPlant);
-                //string plantString = newPlant.ToString();
-                //Console.WriteLine(plantString);
-            }
-            return returnPlants;
-        }
-
-        public static string TrimOuterStrings(string input, string openingString, string closingString)
-        {
-            string returnString = input.TrimStart(openingString);
-            returnString = returnString.TrimEnd(closingString);
-
-            return returnString;
-        }
-
-        public static string TrimStart(this string target, string trimString)
-        {
-            string result = target;
-            while (result.StartsWith(trimString))
-            {
-                result = result.Substring(trimString.Length);
-            }
-
-            return result;
-        }
-
-        public static string TrimEnd(this string target, string trimString)
-        {
-            string result = target;
-            while (result.EndsWith(trimString))
-            {
-                result = result.Substring(0, result.Length - trimString.Length);
-            }
-
-            return result;
-        }
-
-        public static int GetPlantIntProperty(Dictionary<string, string> propertyDict, string propertyName, out int propertyInt)
-        {
-            if (int.TryParse(propertyDict[propertyName], out propertyInt))
-            {
-                return propertyInt;
-            }
-            else
-            {
-                throw new Exception();
-            }
+            //}
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace PowerGrid
@@ -54,6 +55,7 @@ namespace PowerGrid
                 public static string CoalOil = "CoalOil";
                 public static string Garbage = "Garbage";
                 public static string Uranium = "Uranium";
+                public static string Green = "Green";
             }
         }
 
@@ -140,6 +142,18 @@ namespace PowerGrid
 
                 public static string Tampa = "Tampa";
                 public static string Washington = "Washington";
+
+                public static List<string> ToList()
+                {
+                    List<string> cities = new List<string>();
+                    Type type = typeof(Names);
+                    foreach (var p in type.GetFields(System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.NonPublic))
+                    {
+                        var v = p.GetValue(null);
+                        cities.Add(v.ToString());
+                    }
+                    return cities;
+                }
             }
 
             #region regional dictionary
@@ -504,6 +518,7 @@ namespace PowerGrid
             };
             #endregion
 
+            #region Connection Costs
             public static readonly Dictionary<string, int> Costs = new Dictionary<string, int>
             {
                 {Names.PortlandSeattle, 3 },
@@ -631,7 +646,35 @@ namespace PowerGrid
 
                 {Names.TampaJacksonville        , 4 },
                 {Names.TampaMiami               , 4 }
-            };                                                     
+            };
+            #endregion
+        }
+
+        public static class Editions
+        {
+            public static class GameEditions
+            {
+                public const string Original = "Original";
+                public const string Deluxe = "Deluxe";
+
+                public static string Default = Original;
+            }
+
+            public static class BoardMap
+            {
+                public const string USA = "USA";
+                public const string Germany = "Germany";
+
+                public static string Default = USA;
+            }
+
+            public static class PlantCards
+            {
+                public const string Original = "Original";
+                public const string New = "New";
+
+                public static string Default = Original;
+            }
         }
     }
 }
